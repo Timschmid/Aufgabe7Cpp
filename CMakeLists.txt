@@ -3,4 +3,4 @@ project(Aufgabe6)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Aufgabe6 main.cpp)
+add_executable(Aufgabe6 main.cpp Rectangle.cpp Rectangle.h InterFace.h)
