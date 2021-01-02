@@ -15,8 +15,8 @@ public:
     Rectangle(double  width, double length);
     double getLength() override;
     double getWidth() override;
-    double circumference();
-    double area();
+   virtual double circumference();
+    virtual double area();
 
 };
 

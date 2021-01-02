@@ -15,3 +15,11 @@ double Rectangle::getWidth() {
 double Rectangle::getLength() {
     return length;
 }
+
+double Rectangle::circumference() {
+    return (2.0*getWidth()) + (2.0 * getLength());
+}
+
+double Rectangle::area() {
+    return getWidth() * getLength();
+}
