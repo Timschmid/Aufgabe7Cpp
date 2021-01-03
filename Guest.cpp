@@ -12,7 +12,7 @@ int Guest::getRoomRate() const {
     return roomRate;
 }
 
-Guest::Guest(int days, int roomRate) : Person(getId(),getLastName(),getFirstName()), days(days), roomRate(roomRate){}
+Guest::Guest(int id, std::string lastName, std::string firstname, int days, int roomRate) : Person(id,lastName,firstname), days(days), roomRate(roomRate){}
 
 int Guest::check() {
     return days * roomRate;

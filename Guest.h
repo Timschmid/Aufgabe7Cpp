@@ -17,7 +17,7 @@ public:
     int getRoomRate() const;
 
 public:
-    Guest(int days, int roomRate);
+    Guest(int id, std::string lastName, std::string firstname, int days, int roomRate);
     int check();
 };
 

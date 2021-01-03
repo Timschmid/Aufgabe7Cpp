@@ -2,6 +2,8 @@
 #include <array>
 #include "Rectangle.h"
 #include "Cuboid.h"
+#include "Guest.h"
+#include "Person.h"
 
 class Base {
     int valueB;
@@ -82,14 +84,24 @@ int main() {
     //Auf B kann zugegriffen werden, da D von b erbt
     std::cout << b.getValueB() << " functioniert" << std::endl;
 
-    b.setValueB(22);
+    b.setValueB(23);
     b2 =b;
 
-    std::cout << b2.getValueB() << "functioniert" << std::endl;
+    std::cout << b2.getValueB() << " functioniert" << std::endl;
 
     std::cout  << std::endl;
 
+
+
+
     //Aufgabe4
+    Person person(12,"Schmid", "Tim");
+    std::cout << "Name: " << person.getLastName() << " Vorname: " << person.getFirstName() << "ID: " << person.getId() << std::endl;
+
+    Guest g(21,"Norbert","FalscheAussage", 22, 350);
+
+    std::cout << "Der Gast: " << g.getLastName() << ", " << g.getFirstName() << " hat " << g.getDays() <<  " gebucht. Er zahlt " << g.check() << " Euro" << std::endl;
+
 
 
 }
