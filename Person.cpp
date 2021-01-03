@@ -15,3 +15,5 @@ const std::string &Person::getLastName() const {
 const std::string &Person::getFirstName() const {
     return firstName;
 }
+
+Person::Person(int id, std::string lastName, std::string firstname) : id(id), lastName(lastName), firstName(firstname) { }

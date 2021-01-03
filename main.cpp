@@ -87,6 +87,10 @@ int main() {
 
     std::cout << b2.getValueB() << "functioniert" << std::endl;
 
+    std::cout  << std::endl;
+
+    //Aufgabe4
+
 
 }
 
