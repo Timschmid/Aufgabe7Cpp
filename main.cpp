@@ -94,7 +94,7 @@ int main() {
 
 
 
-    //Aufgabe4
+
     Person person(12,"Schmid", "Tim");
     std::cout << "Name: " << person.getLastName() << " Vorname: " << person.getFirstName() << "ID: " << person.getId() << std::endl;
 
