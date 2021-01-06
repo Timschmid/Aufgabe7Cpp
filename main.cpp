@@ -108,6 +108,9 @@ int main() {
     employee = worker;
 
     std::cout << employee.slary() << std::endl;
+    //Es wird immer noch die Salary methode von Employee ausgegeben.
+    // Man Würde aber erwarten, dass nun die von Worker
+    //Ausgegeben wird.
 
     //worker = seller; , Nicht möglich
    // worker = Employee; Nicht möglich;
