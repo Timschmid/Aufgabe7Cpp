@@ -4,6 +4,9 @@
 #include "Cuboid.h"
 #include "Guest.h"
 #include "Person.h"
+#include "Employee.h"
+#include "Worker.h"
+#include "Seller.h"
 
 class Base {
     int valueB;
@@ -77,10 +80,8 @@ int main() {
     //b.setValueB(33);
    // d = b; // wird nicht kompeliert
 
-
     d.setValueB(44);
     b = d;
-
     //Auf B kann zugegriffen werden, da D von b erbt
     std::cout << b.getValueB() << " functioniert" << std::endl;
 
@@ -91,10 +92,6 @@ int main() {
 
     std::cout  << std::endl;
 
-
-
-
-
     Person person(12,"Schmid", "Tim");
     std::cout << "Name: " << person.getLastName() << " Vorname: " << person.getFirstName() << "ID: " << person.getId() << std::endl;
 
@@ -103,6 +100,23 @@ int main() {
     std::cout << "Der Gast: " << g.getLastName() << ", " << g.getFirstName() << " hat " << g.getDays() <<  " gebucht. Er zahlt " << g.check() << " Euro" << std::endl;
 
 
+    //Aufgabe 4
+    Employee employee(21, "Schmid", "Tim");
+    Worker worker(22,"Hans","Peter",22,25);
+    Seller seller(23,"Gebe","Miriam", 4040, 1000);
 
+    employee = worker;
+
+    std::cout << employee.slary() << std::endl;
+
+    //worker = seller; , Nicht möglich
+   // worker = Employee; Nicht möglich;
+
+   // seller = worker Nicht möglich;
+  // seller = employee; Nicht möglich
+  employee = seller;
+
+  //f Salearay were besser, wenn man die Klasse Überladen könnte wie in java, da sie verschiedene Fuktionen in den verschiedenen klassen hat;
+  //das geht in C++ mit virtual
 }
 

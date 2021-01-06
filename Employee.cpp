@@ -7,3 +7,7 @@
 Employee::Employee(int id, std::string lastName, std::string firstname) : Person(id, lastName, firstname) {
 
 }
+
+double Employee::slary() {
+    return 0;
+}
