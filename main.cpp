@@ -3,7 +3,6 @@
 #include "Rectangle.h"
 #include "Cuboid.h"
 #include "Guest.h"
-#include "Person.h"
 #include "Employee.h"
 #include "Worker.h"
 #include "Seller.h"
@@ -60,12 +59,12 @@ int main() {
     std::cout << "R Volumen: " << c.area() << std::endl;
 
 
-    //Cuboid wäre als Basisklasse eher ungeeignet, da Ein Rechteck nur zwei Wete höhe und Länge benötigt, ein Quader hingegen 3.
-    //Bei der Vererbung ist es jedoch nicht gut/Möglich inter unterklasse Weniger Atribute als in der Basisklasse zu hanben.
-    //Nur Mehr oder gleichviel Attribute als in der Basisklasse sind möglich.
+    //Cuboid wäre als Basisklasse eher ungeeignet, da ein Rechteck nur zwei Wete Höhe und Länge benötigt, ein Quader hingegen 3.
+    //Bei der Vererbung ist es also nicht gut/Möglich in der Unterklasse weniger Atribute als in der Basisklasse zu hanben.
+    //Nur mehr oder gleichviel Attribute als in der Basisklasse sind möglich.
 
     //Der Typ double ist in diesem Fall geeignet, da somit auch Komma zahlen möglich sind. jedoch sind auch negative zahlen möglich was eher unpraktisch ist.
-    //hier könnte es also jeweils immer ein unsignet int für Zahl und nachkommastellen geben was sinvol sein kann. oder die Üperprüfung auf negatice zahlen.
+    //hier könnte es also jeweils immer ein unsignet int für Zahl und Nachkommastellen geben was sinvol sein kann, oder die Üperprüfung auf negative Zahlen.
 
     Base b;
     Base b2;
@@ -103,14 +102,17 @@ int main() {
     //Aufgabe 4
     Employee employee(21, "Schmid", "Tim");
     Worker worker(22,"Hans","Peter",22,25);
-    Seller seller(23,"Gebe","Miriam", 4040, 1000);
+    Worker worker2(22,"Lenz","Hubel",22,25);
+    Seller seller(23,"Hannig","Miriam", 4040, 1000);
 
     employee = worker;
 
     std::cout << employee.slary() << std::endl;
-    //Es wird immer noch die Salary methode von Employee ausgegeben.
-    // Man Würde aber erwarten, dass nun die von Worker
-    //Ausgegeben wird.
+    std::cout << worker2.slary() << std::endl;
+
+    //Es wird immer noch die Salary Methode von Employee ausgegeben.
+    //Man würde aber erwarten, dass nun die von Worker
+    //ausgegeben wird.
 
     //worker = seller; , Nicht möglich
    // worker = Employee; Nicht möglich;
@@ -119,7 +121,10 @@ int main() {
   // seller = employee; Nicht möglich
   employee = seller;
 
-  //f Salearay were besser, wenn man die Klasse Überladen könnte wie in java, da sie verschiedene Fuktionen in den verschiedenen klassen hat;
-  //das geht in C++ mit virtual
+  //D) Die Klassenhierarche so zu deffinieren macht eigentlich schon sinn, weil Seller und Worker Grundlegende Dinge gleich besitzen. Nur die Function salary
+  //und dadurch enstehende Atribute sind verschieden und könneten überladen werden.
+
+  //f) ES wäre besser, wenn man die Methode salary der Klasse Überladen könnte wie in java, da sie verschiedene Funktionen in den verschiedenen Klassen hat;
+  //das geht in C++ mit dem Wort virtual
 }
 
