@@ -3,6 +3,7 @@
 //
 
 #include "Worker.h"
+#include <iostream>
 
 
 Worker::Worker(int id, std::string lastName, std::string firstname, double hourlyRate, double hoursWorked) : Employee(id, lastName, firstname), hourlyRate(hourlyRate), hoursWorked(hoursWorked) {}
@@ -16,5 +17,6 @@ double Worker::getHoursWorked() const {
 }
 
 double Worker::slary() {
+    std::cout << "Worker Salary ";
    return hourlyRate*hoursWorked;
 }
