@@ -5,7 +5,7 @@
 #include "Seller.h"
 
 
-double Seller::slary() {
+double Seller::salary() {
     return pay + commison;
 }
 

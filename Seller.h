@@ -18,7 +18,7 @@ public:
 
 public:
     Seller(int id, std::string lastName, std::string firstname, double pay, double comission);
-    double slary() override;
+    double salary() override;
 };
 
 

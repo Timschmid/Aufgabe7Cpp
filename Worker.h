@@ -18,7 +18,7 @@ public:
 
 public:
     Worker(int id, std::string lastName, std::string firstname, double hourlyRate, double hoursWorked);
-    double slary() override;
+    double salary() override;
 };
 
 

@@ -1,130 +1,18 @@
 #include <iostream>
 #include <array>
-#include "Rectangle.h"
-#include "Cuboid.h"
 #include "Guest.h"
 #include "Employee.h"
 #include "Worker.h"
 #include "Seller.h"
 
-class Base {
-    int valueB;
-public:
-    void setValueB(int value);
-
-    int getValueB();
-};
-
-void Base::setValueB(int value) {
-    this->valueB = value;
-}
-
-int Base::getValueB() {
-    return valueB;
-}
-
-typedef std::array<int, 1> SingleArray;
-
-class Derived : public Base {
-    SingleArray *array = new SingleArray();
-public:
-    void setValueD(int value);
-
-    int getValueD();
-};
-
-void Derived::setValueD(int value) {
-    (*array)[0] = value;
-}
-
-int Derived::getValueD() {
-    return (*array)[0];
-}
-
-
 int main() {
-
-    Rectangle r(12,12);
-
-    std::cout << "R width: " << r.getWidth() << " R length: " << r.getLength() << std::endl;
-    std::cout << "R umfang: " << r.circumference() << std::endl;
-    std::cout << "R Flaeche: " << r.area() << std::endl;
-
-    std::cout << std::endl;
-
-    Cuboid c(4,4, 5);
-
-    std::cout << "R width: " << c.getWidth() << " R length: " << c.getLength() << "R Height: " << c.getHeight() <<std::endl;
-    std::cout << "R Mantell-Umfang: " << c.circumference() << std::endl;
-    std::cout << "R Volumen: " << c.area() << std::endl;
-
-
-    //Cuboid wäre als Basisklasse eher ungeeignet, da ein Rechteck nur zwei Wete Höhe und Länge benötigt, ein Quader hingegen 3.
-    //Bei der Vererbung ist es also nicht gut/Möglich in der Unterklasse weniger Atribute als in der Basisklasse zu hanben.
-    //Nur mehr oder gleichviel Attribute als in der Basisklasse sind möglich.
-
-    //Der Typ double ist in diesem Fall geeignet, da somit auch Komma zahlen möglich sind. jedoch sind auch negative zahlen möglich was eher unpraktisch ist.
-    //hier könnte es also jeweils immer ein unsignet int für Zahl und Nachkommastellen geben was sinvol sein kann, oder die Üperprüfung auf negative Zahlen.
-
-    Base b;
-    Base b2;
-    Derived d;
-    Derived d2;
-
-    d.setValueD(22);
-    d2 = d;
-
-    std::cout << d2.getValueD() << " funktioniert " << std::endl;
-
-    //b.setValueB(33);
-   // d = b; // wird nicht kompeliert
-
-    d.setValueB(44);
-    b = d;
-    //Auf B kann zugegriffen werden, da D von b erbt
-    std::cout << b.getValueB() << " functioniert" << std::endl;
-
-    b.setValueB(23);
-    b2 =b;
-
-    std::cout << b2.getValueB() << " functioniert" << std::endl;
-
-    std::cout  << std::endl;
-
-    Person person(12,"Schmid", "Tim");
-    std::cout << "Name: " << person.getLastName() << " Vorname: " << person.getFirstName() << "ID: " << person.getId() << std::endl;
-
-    Guest g(21,"Norbert","FalscheAussage", 22, 350);
-
-    std::cout << "Der Gast: " << g.getLastName() << ", " << g.getFirstName() << " hat " << g.getDays() <<  " gebucht. Er zahlt " << g.check() << " Euro" << std::endl;
-
-
-    //Aufgabe 4
-    Employee employee(21, "Schmid", "Tim");
-    Worker worker(22,"Hans","Peter",22,25);
-    Worker worker2(22,"Lenz","Hubel",22,25);
-    Seller seller(23,"Hannig","Miriam", 4040, 1000);
-
+    auto employee = new Employee(4, "Duck", "Tick");
+    std::cout << employee->salary()<<std::endl;
+    auto worker = new Worker(4, "Duck", "Tick", 9, 40);
     employee = worker;
-
-    std::cout << employee.slary() << std::endl;
-    std::cout << worker2.slary() << std::endl;
-
-    //Es wird immer noch die Salary Methode von Employee ausgegeben.
-    //Man würde aber erwarten, dass nun die von Worker
-    //ausgegeben wird.
-
-    //worker = seller; , Nicht möglich
-   // worker = Employee; Nicht möglich;
-
-   // seller = worker Nicht möglich;
-  // seller = employee; Nicht möglich
-  employee = seller;
-
-  //D) Die Klassenhierarche so zu deffinieren macht eigentlich schon sinn, weil Seller und Worker Grundlegende Dinge gleich besitzen. Nur die Function salary
-  //und dadurch enstehende Atribute sind verschieden und könneten überladen werden.
-
-  //f) ES wäre besser, wenn man die Methode salary der Klasse Überladen könnte wie in java, da sie verschiedene Funktionen in den verschiedenen Klassen hat;
-  //das geht in C++ mit dem Wort virtual
+    std::cout << employee->salary()<<std::endl;
+    auto seller = new Seller(5, "Duck", "Trick", 1000, 2000);
+    employee = seller;
+    std::cout << employee->salary() << std::endl;
 }
 

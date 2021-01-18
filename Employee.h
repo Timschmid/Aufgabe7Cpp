@@ -12,7 +12,7 @@ class Employee : public Person {
 public:
     Employee(int id, std::string lastName, std::string firstname);
 
-    virtual double slary ();
+    virtual double salary () = 0;
 };
 
 

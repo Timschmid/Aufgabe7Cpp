@@ -3,4 +3,4 @@ project(Aufgabe6)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Aufgabe6 main.cpp Rectangle.cpp Rectangle.h InterFace.h Cuboid.cpp Cuboid.h Person.cpp Person.h Guest.cpp Guest.h Employee.cpp Employee.h Worker.cpp Worker.h Seller.cpp Seller.h)
+add_executable(Aufgabe6 main.cpp Person.cpp Person.h Guest.cpp Guest.h Employee.cpp Employee.h Worker.cpp Worker.h Seller.cpp Seller.h)

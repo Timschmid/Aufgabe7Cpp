@@ -16,7 +16,7 @@ double Worker::getHoursWorked() const {
     return hoursWorked;
 }
 
-double Worker::slary() {
+double Worker::salary() {
     std::cout << "Worker Salary ";
    return hourlyRate*hoursWorked;
 }
