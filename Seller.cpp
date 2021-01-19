@@ -2,10 +2,12 @@
 // Created by timsc on 03.01.2021.
 //
 
+#include <iostream>
 #include "Seller.h"
 
 
 double Seller::salary() {
+    std::cout << "Seller salary: ";
     return pay + commison;
 }
 
